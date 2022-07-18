@@ -1,5 +1,9 @@
 # beads-nested-number-notation
 
+Commentary by author:  
+
+📖 [数珠玉記数法 (Beads Nested Number Notation)](https://crieit.net/posts/Beads-Nested-Number-Notation)  
+
 # Install
 
 ```shell
