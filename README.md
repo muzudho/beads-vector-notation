@@ -1,9 +1,9 @@
 # beads-nested-number-notation
 
-# Test
+# Install
 
 ```shell
-python -m test
+pip install beadsnum
 ```
 
 # Explanation
@@ -101,4 +101,18 @@ o2o1-ship
 o2o2-train
 o2o3-car
 o2o3o1-police-car
+```
+
+👇 UPPER_SNAKE_CASE
+
+```plaintext
+O1_FOOD
+O1O1_FRUIT
+O1O1O1_APPLE
+O1O1O2_BANANA
+O2_VEHICLE
+O2O1_SHIP
+O2O2_TRAIN
+O2O3_CAR
+O2O3O1_POLICE_CAR
 ```

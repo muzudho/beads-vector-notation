@@ -17,13 +17,13 @@ class BeadsNum:
             pass
         else:
             # タプルとして格納する
-            self._content = value,
+            self._numbers = value,
             return
 
         if type(value) is tuple:
             # タプル型なら
             # そのまま入れる
-            self._content = value
+            self._numbers = value
         else:
             # それ以外は文字列として扱う
 
@@ -52,7 +52,7 @@ class BeadsNum:
             numerics = map(lambda x: int(x), numerics)
 
             # タプルとして格納する
-            self._content = tuple(numerics)
+            self._numbers = tuple(numerics)
 
         """
         try:
@@ -89,6 +89,10 @@ class BeadsNum:
 
     def __str__(self):
         text = ""
-        for numeric in self._content:
+        for numeric in self._numbers:
             text = f"{text}o{numeric}"
         return text.capitalize()
+
+    @property
+    def numbers(self):
+        return self._numbers
