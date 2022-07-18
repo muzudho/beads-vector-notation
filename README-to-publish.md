@@ -10,13 +10,19 @@
             └── 📄 __init__.py
 ```
 
-👇 pipを更新  
+👇 （していなければ）pipを更新  
 
 ```shell
 python -m pip install --upgrade pip
 ```
 
-👇 以下のファイルを新規作成  
+👇 （していなければ）buildパッケージをインストール  
+
+```shell
+python.exe -m pip install --upgrade build
+```
+
+👇 （していなければ）以下のファイルを新規作成  
 
 ```plaintext
     ├── 📂 src
@@ -29,12 +35,6 @@ python -m pip install --upgrade pip
 ２回目以降のアップロードでは、バージョン番号を上げてほしい  
 
 （必要ないかもしれないが build をする前に） Git Hub などのリポジトリ―を利用しているなら、コミットしていないファイルがあればコミットしておくといいかもしれない  
-
-👇 （していなければ）buildパッケージをインストール  
-
-```shell
-python.exe -m pip install --upgrade build
-```
 
 👇 buildを実行  
 
