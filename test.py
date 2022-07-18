@@ -37,6 +37,11 @@ test_data = [
     # 混在
     ['"o12O34o56O78o910"', BeadsNum('o12O34o56O78o910')],
 
+    # 拡張: 辞書順記数法への寛容
+    ['A77', BeadsNum('A77')],
+    ['AA777', BeadsNum('AA777')],
+    ['O7oA77oAA777oAAA7777', BeadsNum('O7oA77oAA777oAAA7777')],
+
     # タプル
     ['"(1,2)"', BeadsNum((1, 2))],
     ['"(1,2,3)"', BeadsNum((1, 2, 3))],

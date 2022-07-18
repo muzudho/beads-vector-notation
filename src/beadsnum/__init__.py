@@ -5,7 +5,8 @@ class BeadsNum:
     """Beads Nested Number"""
 
     # めんどくさいので .upper() して O と数字で構成されていればOkとする
-    pattern1 = re.compile(r"^([O\d]*)$")
+    # 辞書順記数法に対応するために、めんどくさいので A が含まれていてもOkとする
+    pattern1 = re.compile(r"^([AO\d]*)$")
 
     def __init__(self, value=0):
 
@@ -36,6 +37,9 @@ class BeadsNum:
                 pass
             else:
                 raise ValueError(f"not beads nested number: {value}")
+
+            # 辞書順記数法に対応するために、 A を除去する
+            value = value.replace('A', '')
 
             # O が２連続してはいけない
             if "OO" in value:
