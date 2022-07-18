@@ -38,6 +38,10 @@ class BeadsNum:
             if "OO" in value.upper():
                 raise ValueError(f"not beads nested number: {value}")
 
+            # 先頭に O または o が付いているのは構わないものとし、
+            # 先頭に付いている O または o は削除する
+            value = value.lstrip('Oo')
+
             # タプルとして格納する
             self._content = value,
 

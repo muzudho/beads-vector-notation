@@ -1,11 +1,11 @@
 """
 python -m test
 """
-from beadsnum import BeadsNum
+from src.beadsnum import BeadsNum
 
 print(f"0 --> {str(BeadsNum(0))}")
 print(f"1 --> {str(BeadsNum(1))}")
-# print(f"'O2o1' --> {str(BeadsNum('O2o1'))}")
+print(f"'O2o1' --> {str(BeadsNum('O2o1'))}")
 
 # B は使えない文字だ
 try:
