@@ -57,12 +57,12 @@ for datum in test_data:
 
 # B は使えない文字だ
 try:
-    print(f"OB1 --> {BeadsNum('OB1')} is bad")
+    print(f'[Error] "OB1" --> {BeadsNum("OB1")}')
 except:
-    print(f"OB1 is not BeadsNum")
+    print(f'"OB1" is not BeadsNum')
 
 # o が２連続するのはおかしい
 try:
-    print(f"[Error] O2oo1 --> {BeadsNum('O2oo1')}")
+    print(f'[Error] "O2oo1" --> {BeadsNum("O2oo1")}')
 except:
-    print(f"O2oo1 is not BeadsNum")
+    print(f'"O2oo1" is not BeadsNum')
