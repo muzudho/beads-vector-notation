@@ -1,4 +1,5 @@
 import re
+from dicordnum import DicOrdNum
 
 
 class BeadsNum:
@@ -62,8 +63,20 @@ class BeadsNum:
         text = ""
         for numeric in self._numbers:
             text = f"{text}o{numeric}"
-        return text.capitalize()
+        # 先頭を大文字にする
+        text = f"O{text[1:]}"
+        return text
 
     @property
     def numbers(self):
         return self._numbers
+
+    @property
+    def dicordnum(self):
+        """辞書順記数法"""
+        text = ""
+        for column in self._numbers:
+            text = f"{text}o{DicOrdNum(column)}"
+        # 先頭を大文字にする
+        text = f"O{text[1:]}"
+        return text

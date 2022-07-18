@@ -24,7 +24,7 @@ test_data = [
     ['"O1o2o3"', BeadsNum('O1o2o3')],
     ['"O1o2o3o4"', BeadsNum('O1o2o3o4')],
 
-    # o1o2 の形
+    # o1o2 の形, snake_case への寛容
     ['"o1o2"', BeadsNum('o1o2')],
     ['"o1o2o3"', BeadsNum('o1o2o3')],
     ['"o1o2o3o4"', BeadsNum('o1o2o3o4')],
@@ -42,6 +42,10 @@ test_data = [
     ['AA777', BeadsNum('AA777')],
     ['O7oA77oAA777oAAA7777', BeadsNum('O7oA77oAA777oAAA7777')],
 
+    ['a77', BeadsNum('a77')],
+    ['aa777', BeadsNum('aa777')],
+    ['o7oa77oaa777oaaa7777', BeadsNum('O7oa77oaa777oaaa7777')],
+
     # タプル
     ['"(1,2)"', BeadsNum((1, 2))],
     ['"(1,2,3)"', BeadsNum((1, 2, 3))],
@@ -49,7 +53,7 @@ test_data = [
 ]
 
 for datum in test_data:
-    print(f"{datum[0]} --> {datum[1]} {datum[1].numbers}")
+    print(f"{datum[0]} --> {datum[1]} {datum[1].numbers} {datum[1].dicordnum}")
 
 # B は使えない文字だ
 try:

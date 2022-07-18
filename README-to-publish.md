@@ -2,6 +2,8 @@
 
 📖 [Pythonスクリプトってどうやってパブリッシュするんだぜ（＾～＾）？](https://crieit.net/drafts/61a3496b73b42)  
 
+## Step O1
+
 👇 ソースは、 `src` ディレクトリーを作って、その中に入れてほしい  
 
 ```plaintext
@@ -10,17 +12,23 @@
             └── 📄 __init__.py
 ```
 
+## Step O2o1
+
 👇 （していなければ）pipを更新  
 
 ```shell
 python -m pip install --upgrade pip
 ```
 
+## Step O3o1
+
 👇 （していなければ）buildパッケージをインストール  
 
 ```shell
 python.exe -m pip install --upgrade build
 ```
+
+## Step O4o1
 
 👇 （していなければ）以下のファイルを新規作成  
 
@@ -32,9 +40,15 @@ python.exe -m pip install --upgrade build
 👉  └── 📄 setup.py  
 ```
 
-２回目以降のアップロードでは、バージョン番号を上げてほしい  
+## Step O5o1
+
+２回目以降のアップロードでは、 `setup.cfg`, `setup.py` ファイルの中のバージョン番号を上げてほしい  
+
+## Step O6o1
 
 （必要ないかもしれないが build をする前に） Git Hub などのリポジトリ―を利用しているなら、コミットしていないファイルがあればコミットしておくといいかもしれない  
+
+## Step O7o1
 
 👇 buildを実行  
 
@@ -55,6 +69,8 @@ python.exe -m build
     └── 📄 setup.py  
 ```
 
+## Step O8o1
+
 👇 まず、テスト環境へのアップロードを試します  
 PyPi へログインするためのユーザー名とパスワードの入力が求められます  
 
@@ -63,6 +79,8 @@ python.exe -m twine upload --repository testpypi dist/* --verbose
 ```
 
 ログインに成功すると、アップロードが行われ、 URL が出てくるのでアクセスしてください  
+
+## Step O9o1
 
 👇 本番です  
 
