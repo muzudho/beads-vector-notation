@@ -13,13 +13,13 @@ class BeadsNum:
 
         try:
             # 整数かどうか判定
-            int(str(value), 10)
+            integer = int(str(value), 10)
         except ValueError:
-            # 無視
+            # 整数でなければ次へ
             pass
         else:
             # タプルとして格納する
-            self._columns = value,
+            self._columns = integer,
             return
 
         if type(value) is tuple:
