@@ -1,5 +1,13 @@
 # beads-nested-number-notation
 
+# Test
+
+```shell
+python -m test
+```
+
+# Explanation
+
 👇 Tree structure  
 
 ```plaintext
