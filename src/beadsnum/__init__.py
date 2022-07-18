@@ -13,19 +13,19 @@ class BeadsNum:
 
         try:
             # 整数かどうか判定
-            num = int(str(value), 10)
+            int(str(value), 10)
         except ValueError:
             # 無視
             pass
         else:
             # タプルとして格納する
-            self._numbers = value,
+            self._columns = value,
             return
 
         if type(value) is tuple:
             # タプル型なら
             # そのまま入れる
-            self._numbers = value
+            self._columns = value
         else:
             # それ以外は文字列として扱う
 
@@ -51,31 +51,31 @@ class BeadsNum:
             value = value.lstrip('O')
 
             # 区切り文字 O で分割
-            numerics = value.split('O')
+            columns = value.split('O')
 
             # 整数化
-            numerics = map(lambda x: int(x), numerics)
+            columns = map(lambda x: int(x), columns)
 
             # タプルとして格納する
-            self._numbers = tuple(numerics)
+            self._columns = tuple(columns)
 
     def __str__(self):
         text = ""
-        for numeric in self._numbers:
-            text = f"{text}o{numeric}"
+        for column in self._columns:
+            text = f"{text}o{column}"
         # 先頭を大文字にする
         text = f"O{text[1:]}"
         return text
 
     @property
-    def numbers(self):
-        return self._numbers
+    def columns(self):
+        return self._columns
 
     @property
     def dicordnum(self):
         """辞書順記数法"""
         text = ""
-        for column in self._numbers:
+        for column in self._columns:
             text = f"{text}o{DicOrdNum(column)}"
         # 先頭を大文字にする
         text = f"O{text[1:]}"

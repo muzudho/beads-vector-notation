@@ -1,5 +1,5 @@
 """
-python -m test
+python -m tests.test
 """
 from src.beadsnum import BeadsNum
 
@@ -53,7 +53,7 @@ test_data = [
 ]
 
 for datum in test_data:
-    print(f"{datum[0]} --> {datum[1]} {datum[1].numbers} {datum[1].dicordnum}")
+    print(f"{datum[0]} --> {datum[1]} {datum[1].columns} {datum[1].dicordnum}")
 
 # B は使えない文字だ
 try:
