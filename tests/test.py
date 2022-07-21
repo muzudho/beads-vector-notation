@@ -45,29 +45,29 @@ test_data = [
     ['"o_9O1oA10"', BeadsVec('o_9O1oA10'), 'O_9o1oA10', (-1, 1, 10)],
 
     # 拡張: 辞書順記数法への寛容
-    ['A77', BeadsVec('A77'), 'OA77', (77,)],
-    ['AA777', BeadsVec('AA777'), 'OAA777', (777,)],
-    ['O7oA77oAA777oAAA7777', BeadsVec(
+    ['"A77"', BeadsVec('A77'), 'OA77', (77,)],
+    ['"AA777"', BeadsVec('AA777'), 'OAA777', (777,)],
+    ['"O7oA77oAA777oAAA7777"', BeadsVec(
         'O7oA77oAA777oAAA7777'), 'O7oA77oAA777oAAA7777', (7, 77, 777, 7777)],
 
-    ['a77', BeadsVec('a77'), 'OA77', (77)],
-    ['aa777', BeadsVec('aa777'), 'OAA777', (777)],
-    ['o7oa77oaa777oaaa7777', BeadsVec(
-        'O7oa77oaa777oaaa7777'), 'O7oa77oaa777oaaa7777', (7, 77, 777, 7777)],
+    ['"a77"', BeadsVec('a77'), 'OA77', (77,)],
+    ['"aa777"', BeadsVec('aa777'), 'OAA777', (777,)],
+    ['"o7oa77oaa777oaaa7777"', BeadsVec(
+        'O7oa77oaa777oaaa7777'), 'O7oA77oAA777oAAA7777', (7, 77, 777, 7777)],
 
     # タプル
-    ['"(1,2)"', BeadsVec((1, 2)), 'O1o2', (1, 2)],
-    ['"(1,2,-3)"', BeadsVec((1, 2, 3)), 'O1o2o_7', (1, 2, -3)],
-    ['"(1,2,10,4)"', BeadsVec((1, 2, 3, 4)), 'O1o2oA10o4', (1, 2, 10, 4)],
+    ['(1,2)', BeadsVec((1, 2)), 'O1o2', (1, 2)],
+    ['(1,2,-3)', BeadsVec((1, 2, -3)), 'O1o2o_7', (1, 2, -3)],
+    ['(1,2,10,4)', BeadsVec((1, 2, 10, 4)), 'O1o2oA10o4', (1, 2, 10, 4)],
 ]
 
 for datum in test_data:
     if f'{datum[1]}' == datum[2] and datum[1].elements == datum[3]:
         print(
-            f'"{datum[0]}" --> "{datum[1]}" {datum[1].elements}')
+            f'{datum[0]} --> "{datum[1]}" {datum[1].elements}')
     else:
         print(
-            f'[Error] "{datum[0]}" --> "{datum[1]}" {datum[1].elements} Expected: "{datum[2]}"')
+            f'[Error] {datum[0]} --> "{datum[1]}" {datum[1].elements} Expected: "{datum[2]}" {datum[3]}')
 
 
 # B は使えない文字だ
