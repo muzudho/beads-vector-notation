@@ -19,13 +19,13 @@ class BeadsVec:
             pass
         else:
             # タプルとして格納する
-            self._columns = int_column,
+            self._elements = int_column,
             return
 
         # タプル型なら
         if type(value) is tuple:
             # そのまま入れる
-            self._columns = value
+            self._elements = value
             return
 
         # それ以外は文字列として扱う
@@ -44,43 +44,43 @@ class BeadsVec:
         # 先頭に付いている O は削除する
         value = value.lstrip('O')
 
-        new_columns = []
+        new_element_list = []
 
         # 区切り文字 O で分割
-        columns = value.split('O')
+        tokens = value.split('O')
 
-        for column in columns:
-            if column[:1] == 'A':
+        for token in tokens:
+            if token[:1] == 'A':
                 # A を除去する
-                n = int(column.replace('A', ''))
-                new_columns.append(n)
+                n = int(token.replace('A', ''))
+                new_element_list.append(n)
 
-            elif column[:1] == '_':
+            elif token[:1] == '_':
                 # まず '_' を除去する
-                column = column.replace('_', '')
+                token = token.replace('_', '')
 
-                figure = len(column)
+                figure = len(token)
                 modulo = 1
                 for i in range(0, figure):
                     modulo *= 10
 
-                z = -1 * (modulo - int(column))
-                new_columns.append(z)
+                z = -1 * (modulo - int(token))
+                new_element_list.append(z)
 
             else:
-                n = int(column)
-                new_columns.append(n)
+                n = int(token)
+                new_element_list.append(n)
 
         # タプルとして格納する
-        self._columns = tuple(new_columns)
+        self._elements = tuple(new_element_list)
 
     def __str__(self):
         """辞書順記数法"""
         text = ""
-        for column in self._columns:
+        for token in self._elements:
             # print(
-            #    f"column:{column} DicOrdNum(column):{DicOrdNum(column)} text:{text}")
-            text = f"{text}o{DicOrdNum(column)}"
+            #    f"token:{token} DicOrdNum(token):{DicOrdNum(token)} text:{text}")
+            text = f"{text}o{DicOrdNum(token)}"
 
         # 先頭だけを大文字の 'O' にする
         # print(f"text:{text}")
@@ -88,5 +88,5 @@ class BeadsVec:
         return text
 
     @property
-    def columns(self):
-        return self._columns
+    def elements(self):
+        return self._elements
