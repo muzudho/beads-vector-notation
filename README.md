@@ -1,4 +1,4 @@
-# beads-nested-number-notation
+# beads-vector-notation
 
 Commentary by author:  
 
