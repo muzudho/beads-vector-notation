@@ -4,16 +4,16 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="beadsnum",
-    version="2.0.1",
+    name="beadsvec",
+    version="3.0.0",
     author="muzudho",
     author_email="muzudho1@gmail.com",
-    description="Beads nested number notation package",
+    description="Beads vector notation package",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/muzudho/beads-nested-number-notation",
+    url="https://github.com/muzudho/beads-vector-notation",
     project_urls={
-        "Bug Tracker": "https://github.com/muzudho/beads-nested-number-notation/issues",
+        "Bug Tracker": "https://github.com/muzudho/beads-vector-notation/issues",
     },
     classifiers=[
         "Programming Language :: Python :: 3",

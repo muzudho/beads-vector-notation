@@ -7,7 +7,8 @@ Commentary by author:
 # Install
 
 ```shell
-pip install beadsnum
+# pip install dicordnum
+pip install beadsvec
 ```
 
 # Explanation
