@@ -14,7 +14,7 @@ class BeadsVec:
             self._elements = int_value,
             return
 
-        # タプル型なら
+        # タプル型か？
         if type(value) is tuple:
             # そのまま入れる
             self._elements = value
@@ -38,7 +38,13 @@ class BeadsVec:
 
             except ValueError:
                 # 整数でなければ
-                raise ValueError(f"no beads vector notation: {value}")
+
+                # タプル型か？
+                if type(value) is tuple:
+                    # そのまま入れる
+                    new_element_list.append(value)
+                else:
+                    raise ValueError(f"no beads vector notation: {value}")
 
         # タプルとして格納する
         self._elements = tuple(new_element_list)
@@ -47,7 +53,20 @@ class BeadsVec:
         """数珠玉記数法"""
         text = ""
         for token in self._elements:
-            text = f"{text}o{token}"
+
+            # タプル型か？
+            if type(token) is tuple:
+                # `q`, `p` で挟んだものを `o` で接続
+                sub_text = ""
+                for elem in token:
+                    sub_text = f"{sub_text}o{elem}"
+                # 先頭の 'o' は除去します
+                sub_text = sub_text.lstrip('o')
+
+                text = f"{text}oq{sub_text}p"
+            else:
+                # `o` で接続
+                text = f"{text}o{token}"
 
         # 先頭の 'o' は除去します
         return text.lstrip('o')

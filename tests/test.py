@@ -3,6 +3,39 @@ python -m tests.test
 """
 from src.beadsvec import BeadsVec
 
+# Order of Ascii Code
+#
+# ! " # $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; < = > ? @
+# A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+# [ \ ] ^ _ `
+# a b c d e f g h i j k l m n o p q r s t u v w x y z
+# { | } ~
+#
+# 記号の数 32
+# 数字の数 10
+# 大文字の数 26
+# 小文字の数 26
+#
+# 日本の小学校で習う算数の記号
+# ＋　ー　×　 ÷　 ＝　 ：　 ．　（　 ）　度数°
+#
+# 数珠玉表記でエンコードしたい記号（演算優先順）
+# ;  :  (  )  *  /  +  -  .  ,  SPACE
+# 対応させたいアルファベット
+# j  i  q  p  x  y  t  n  o  g  u
+#
+# Examples
+# --------
+#
+# [-1 0 1 2]
+# n1u0u1u2
+#
+# 128.0.0.1
+# 128o0o0o1
+#
+# 5-4*(1+2)/3
+# 5n4xq1t2py3
+
 test_data = [
     # 正の零
     ['0', BeadsVec(0), '0', (0,)],
@@ -45,6 +78,9 @@ test_data = [
     ['(1,2)', BeadsVec((1, 2)), '1o2', (1, 2)],
     ['(1,2,-3)', BeadsVec((1, 2, -3)), '1o2o-3', (1, 2, -3)],
     ['(1,2,10,4)', BeadsVec((1, 2, 10, 4)), '1o2o10o4', (1, 2, 10, 4)],
+
+    # ネストしたタプル
+    ['(1,(2,3))', BeadsVec((1, (2, 3))), '1oq2o3p', (1, (2, 3))],
 ]
 
 for datum in test_data:
