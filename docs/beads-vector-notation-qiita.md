@@ -122,13 +122,25 @@
 
 # 関連する記事
 
-* 辞書順記数法
+## 辞書順記数法
 
-組み合わせて使える
+👇 組み合わせて使える
 
 📖 [辞書順記数法 Crieit版](https://crieit.net/posts/Dictionary-Ordinal-Number-Notation) - ブログ  
 📖 [辞書順記数法 Qiita版](https://qiita.com/muzudho1/items/95852145eceddecd1503) - 固い記事  
-📖 [数珠玉表記 Crieit版](https://crieit.net/posts/Beads-Nested-Number-Notation)
-📖 [電脳記数法 Crieit版](https://crieit.net/posts/Cyber-Number-Notation) - 辞書順記数法と 数珠玉記数法を組み合わせたもの  
+
+## 数珠玉表記
+
+📖 [数珠玉表記 Crieit版](https://crieit.net/posts/Beads-Nested-Number-Notation) - ブログ  
+📖 `数珠玉表記 Qiita版` - この記事
+
+## 電脳向量表記
+
+👇 辞書順記数法と 数珠玉記数法を組み合わせたもの  
+
+📖 [電脳向量表記 Crieit版 ブログ](https://crieit.net/posts/Cyber-Number) - ブログ  
+📖 [電脳向量表記 Crieit版](https://crieit.net/posts/Cyber-Number-Notation) - 固い記事  
+
+## Pythonコード
 
 Example: 📖 [beads-vector-notation](https://github.com/muzudho/beads-vector-notation)  
