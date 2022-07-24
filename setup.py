@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="beadsvec",
-    version="4.0.0",
+    version="4.1.0",
     author="muzudho",
     author_email="muzudho1@gmail.com",
     description="Beads vector notation package",
