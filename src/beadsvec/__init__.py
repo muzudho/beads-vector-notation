@@ -1,5 +1,21 @@
+import re
+
+
 class BeadsVec:
     """Beads Nested Number"""
+
+    # 英字，アンダースコアか
+    __pat_alphabet_etc = re.compile(r"^[A-Za-z_]$")
+
+    # @staticmethod
+    # def is_alphabet_etc_of_left_end(text):
+    #    """左端は英字などか？"""
+    #    return BeadsVec.__pat_alphabet_etc.match(text[:1])
+
+    @staticmethod
+    def is_alphabet_etc_of_right_end(text):
+        """右端は英字などか？"""
+        return BeadsVec.__pat_alphabet_etc.match(text[-1:])
 
     def __init__(self, value=0):
 
@@ -63,10 +79,17 @@ class BeadsVec:
                 # 先頭の 'o' は除去します
                 sub_text = sub_text.lstrip('o')
 
-                text = f"{text}oq{sub_text}p"
+                # `q` が間に入るので、`o` は不要
+                text = f"{text}q{sub_text}p"
             else:
-                # `o` で接続
-                text = f"{text}o{token}"
+                # 左項の右端が英字などなら、セパレーターの `o` は不要
+                if BeadsVec.is_alphabet_etc_of_right_end(text):
+                    separator = ""
+                else:
+                    separator = "o"
+
+                # 接続
+                text = f"{text}{separator}{token}"
 
         # 先頭の 'o' は除去します
         return text.lstrip('o')
