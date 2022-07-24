@@ -99,7 +99,7 @@
 (2.1),(4.3)
 ```
 
-👇 ここで、`.` より `,` の角かっこは優先順位が高いことから、丸かっこは外せる。だから外す  
+👇 ここで、`.` より `,` は優先順位が高いことから、丸かっこは外せる。だから外す  
 
 ```plaintext
 2.1,4.3
@@ -122,7 +122,13 @@
 
 # 関連する記事
 
-📖 [辞書順記数法](https://crieit.net/posts/Dictionary-Ordinal-Number-Notation) - 組み合わせて使える  
-📖 [電脳記数法](https://crieit.net/posts/Cyber-Number-Notation) - 辞書順記数法と 数珠玉記数法を組み合わせたもの  
+* 辞書順記数法
+
+組み合わせて使える
+
+📖 [辞書順記数法 Crieit版](https://crieit.net/posts/Dictionary-Ordinal-Number-Notation) - ブログ  
+📖 [辞書順記数法 Qiita版](https://qiita.com/muzudho1/items/95852145eceddecd1503) - 固い記事  
+📖 [数珠玉表記 Crieit版](https://crieit.net/posts/Beads-Nested-Number-Notation)
+📖 [電脳記数法 Crieit版](https://crieit.net/posts/Cyber-Number-Notation) - 辞書順記数法と 数珠玉記数法を組み合わせたもの  
 
 Example: 📖 [beads-vector-notation](https://github.com/muzudho/beads-vector-notation)  
